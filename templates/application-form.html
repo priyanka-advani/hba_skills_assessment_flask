@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Application Form{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+  <div class="page-header">
+    <h2>Application Form</h2>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-body" id="instructions">To apply for a job, please fill out this form in its entirety.</div>
+  </div>
+
+  <form class="form-horizontal" action="/application-success" method="post">
+
+    <div class="form-group">
+      <label class="control-label col-xs-2" for="firstname">First Name:</label>
+      <div class="col-xs-10 col-sm-4">
+        <input type="text" class="form-control" name="firstname" id="firstname" placeholder="First Name">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-xs-2" for="lastname">Last Name:</label>
+      <div class="col-xs-10 col-sm-4">
+        <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Last Name">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-xs-2" for="salary">Salary Requirement:</label>
+      <div class="col-xs-10 col-sm-4">
+        <input type="number" class="form-control" name="salary" id="salary">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-xs-2" for="position">Position:</label>
+      <div class="col-xs-10 col-sm-4">
+        <select class="form-control" name="position" id="position">
+          <option value="software_engineer">Software Engineer</option>
+          <option value="qa_engineer">QA Engineer</option>
+          <option value="product_manager">Product Manager</option>
+        </select>
+      </div>
+    </div>
+      
+    <div class="form-group">
+      <div class="col-xs-offset-2 col-xs-10">
+        <button type="submit" class="btn btn-default" id="submit">Submit</button>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+
+{% endblock %}

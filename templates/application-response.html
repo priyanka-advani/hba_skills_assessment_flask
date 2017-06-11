@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Application Response{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+  <div class="page-header">
+    <h2>Application Submitted</h2>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-body" id="instructions">Thank you, {{ name }}, for applying to be a {{ position }}. Your minimum salary requirement is {{ salary }}.</div>
+  </div>
+
+</div>
+
+{% endblock %}
