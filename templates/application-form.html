@@ -41,9 +41,9 @@
       <label class="control-label col-xs-2" for="position">Position:</label>
       <div class="col-xs-10 col-sm-4">
         <select class="form-control" name="position" id="position">
-          <option value="software_engineer">Software Engineer</option>
-          <option value="qa_engineer">QA Engineer</option>
-          <option value="product_manager">Product Manager</option>
+          {% for position in positions %}
+          <option value="{{ position }}">{{ position }}</option>
+          {% endfor %}
         </select>
       </div>
     </div>

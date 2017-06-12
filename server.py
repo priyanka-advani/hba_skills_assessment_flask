@@ -20,7 +20,9 @@ def index():
 @app.route("/application-form")
 def application_form():
 
-    return render_template("application-form.html")
+    positions = ["Software Engineer", "QA Engineer", "Product Manager"]
+
+    return render_template("application-form.html", positions=positions)
 
 
 @app.route("/application-success", methods=["POST"])
@@ -30,15 +32,7 @@ def application_success():
     lastname = request.form.get("lastname")
     name = "{} {}".format(firstname, lastname)
 
-
     position = request.form.get("position")
-    if position == "qa_engineer":
-        job = position.split("_")
-        job[0] = job[0].upper()
-        job[1] = job[1].capitalize()
-        position = " ".join(job)
-    else:
-        position = " ".join(position.split("_")).title()
 
     salary = request.form.get("salary")
     salary = "${:6,}".format(int(salary))
